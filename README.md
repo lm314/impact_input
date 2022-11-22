@@ -30,11 +30,15 @@ val = [0,180]
 impact_edit = impact_file.replace(varnames=replace_var,varvals=val)
 ```
 
-## Write New Input File
+## Write New Input File IMPACT
 
 Write an input file with the specified filename. Note it is best practice to make the new file have a different name than the initial input so as not to overwite it. As the IMPACT-Z/T executables require the input file to be named "ImpactZ.in" or "ImpactT.in", the initial input file should have a name other than those two options.
 
 ```python
 impact_edit.write(filename='ImpactT.in')
 ```
+
+## Examples
+
+Examples python scripts that use the IMPACT_IN class to run a phase scan and find the phase with the maximum energy gain for a RF gun can be found [here](Examples/).
 
