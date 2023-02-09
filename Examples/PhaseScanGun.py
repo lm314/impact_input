@@ -19,7 +19,7 @@ treatment of the fields using complex fields (where complex part is shifted
 """
 
 import os
-from IMPACT_IN.IMPACT_IN import IMPACT_IN
+from impact_input import ImpactIn
 import numpy as np
 import pyPartAnalysis.read_partial_norm as rpn
 
@@ -39,7 +39,7 @@ with open("gun_Phase.npy", 'wb') as f:
     np.save(f, gun_phase_vals)
 
 # read in original ImpactT.in file
-impact_file = IMPACT_IN(filename="ImpactT_original.in")
+impact_file = ImpactIn(filename="ImpactT_original.in")
 
 for ind,val in enumerate(gun_phase_vals):
     # replace phase values
