@@ -4,7 +4,7 @@ import copy
 import re
 from collections.abc import Iterable
 
-class IMPACT_IN:
+class ImpactIN:
     
     def __init__(self,filename: str="", contents: str = "",exclude_comments: bool = True):
         #Read in uncommented lines of impact input file and contents as single string
