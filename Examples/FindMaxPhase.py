@@ -22,7 +22,7 @@ treatment of the fields using complex fields (where complex part is shifted
 """
 
 import os
-from IMPACT_IN.IMPACT_IN import IMPACT_IN
+from impact_input import ImpactIn
 import numpy as np
 import pyPartAnalysis.read_partial_norm as rpn
 from scipy.optimize import minimize_scalar
@@ -40,7 +40,7 @@ def getEnergy(phase,impact_file):
     ref_df = rpn.read_fort('fort.18')
     return -ref_df.KE.values[-1]
 
-impact_file = IMPACT_IN(filename="ImpactT_original.in")
+impact_file = ImpactIn(filename="ImpactT_original.in")
 f = lambda phase: getEnergy(phase,impact_file)
 
 res = minimize_scalar(f, bounds=(-50,25), method='bounded')
