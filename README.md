@@ -1,6 +1,13 @@
 # IMPACT_IN
 Python Class for managing IMPACT-Z/T input files. Includes the ability to read and write input files as well as replace string variables found within the file with numeric values.
 
+## Installation
+
+The class can be installed from PyPI, using the following command:
+
+```bash
+pip install impact_input
+```
 
 ## Read in Input File
 
