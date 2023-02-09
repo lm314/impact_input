@@ -1,4 +1,4 @@
-# IMPACT_IN
+# ImpactIn
 Python Class for managing IMPACT-Z/T input files. Includes the ability to read and write input files as well as replace string variables found within the file with numeric values.
 
 ## Installation
@@ -14,9 +14,9 @@ pip install impact_input
 Reads in the input file specified by filename. Includes the ability to remove comments (i.e lines beginning with ! or anything occuring after a /) using exclude_comments. By default `exclude_comments = True`.
 
 ```python
-from IMPACT_IN import IMPACT_IN as IMPACT_IN
+from ImpactIn import IMPACT_IN as IMPACT_IN
 
-impact_file = IMPACT_IN(filename="ImpactT_original.in")
+impact_file = ImpactIn(filename="ImpactT_original.in")
 ```
 
 ## Get all Variables
@@ -47,5 +47,5 @@ impact_edit.write(filename='ImpactT.in')
 
 ## Examples
 
-Examples python scripts that use the IMPACT_IN class to run a phase scan and find the phase with the maximum energy gain for a RF gun can be found [here](Examples/).
+Examples python scripts that use the ImpactIn class to run a phase scan and find the phase with the maximum energy gain for a RF gun can be found [here](Examples/).
 
