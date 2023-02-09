@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "impact_input"
-version = "0.0.1"
+version = "0.0.2"
 authors = [{ name="Lucas Malin", email="lukemalin@gmail.com" }]
 description = "Python Class for managing IMPACT-Z/T input files"
 readme = "README.md"
