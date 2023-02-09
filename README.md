@@ -14,7 +14,7 @@ pip install impact_input
 Reads in the input file specified by filename. Includes the ability to remove comments (i.e lines beginning with ! or anything occuring after a /) using exclude_comments. By default `exclude_comments = True`.
 
 ```python
-from ImpactIn import IMPACT_IN as IMPACT_IN
+from impact_input import ImpactIn
 
 impact_file = ImpactIn(filename="ImpactT_original.in")
 ```
