@@ -32,7 +32,7 @@ class ImpactIN:
             
         pattern = re.compile("|".join(rep.keys()))
         text = pattern.sub(lambda m : rep[re.escape(m.group(0))], self.contents)
-        return IMPACT_IN(contents=text)
+        return ImpactIN(contents=text)
         
     def write(self,filename: str):
         with open(filename, 'w') as f:
