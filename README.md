@@ -29,13 +29,23 @@ impact_file.variables()
 
 ## Replace Variables with Values
 
-Replace the list of variables with the numerical values in the respective order they appear in the list (e.g. gunPhaseF1 becomes 0 below).
+Replace the list of variables with the numerical values in the respective order they appear in the list (e.g. gunPhaseF1 becomes 0 below):
 
 ```python
 replace_var = ["gunPhaseF1","gunPhaseF2"]
 val = [0,180]
 impact_edit = impact_file.replace(varnames=replace_var,varvals=val)
 ```
+
+The same operation can be performed using a dictionary:
+
+```python
+replace_var = ["gunPhaseF1","gunPhaseF2"]
+val = [0,180]
+var = dict(zip(replace_var,val))
+impact_edit = impact_file.replace(variables=var)
+```
+
 
 ## Write New Input File IMPACT
 
