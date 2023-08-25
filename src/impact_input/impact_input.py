@@ -20,10 +20,22 @@ class ImpactIN:
                     contents = f.read()
         self.contents = contents
         
-    def replace(self,varnames=[],varvals=[]):
+    def replace(self,**kwargs):
         # Replace all variables with the associated values in string
         # return new instance of IMPACT_IN
+        # To replace variables using two strings using the keyword arguments
+        # varnames and varvals.
+        # To replace using a dictionary, use the keyword variables.
         
+        if all([key in ['varnames','varvals'] for key in kwargs.keys()]):
+            varnames = kwargs['varnames']
+            varvals = kwargs['varvals']
+        elif 'variables' in kwargs.keys():
+            varnames = kwargs['variables'].keys()
+            varvals = kwargs['variables'].values()
+        else:
+            raise TypeError(f'The following keyword arguments were provided but did not match match the expected values: {kwargs.keys()}',)
+            
         # cannot loop over scaler
         if isinstance(varvals, Iterable):
             rep = dict((re.escape(k), str(v)) for k, v in zip(varnames,varvals)) 
