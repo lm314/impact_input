@@ -38,12 +38,12 @@ class ImpactIN:
             
         # cannot loop over scaler
         if isinstance(varvals, Iterable):
-            rep = dict((re.escape(k), str(v)) for k, v in zip(varnames,varvals)) 
+            rep = dict((rf'\b{re.escape(k)}\b', str(v)) for k, v in zip(varnames,varvals)) 
         else:
-            rep = {re.escape(varnames):str(varvals)}
+            rep = {rf'\b{re.escape(varnames)}\b':str(varvals)}
             
         pattern = re.compile("|".join(rep.keys()))
-        text = pattern.sub(lambda m : rep[re.escape(m.group(0))], self.contents)
+        text = pattern.sub(lambda m : rep[rf'\b{re.escape(m.group(0))}\b'], self.contents)
         return ImpactIN(contents=text)
         
     def write(self,filename: str):
